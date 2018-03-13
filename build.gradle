@@ -41,8 +41,8 @@ dependencies {
 	deobfCompile "mezz.jei:jei_1.12:${jei_version}:api"
     deobfCompile "cofh:RedstoneFlux:1.12-2.0.0.1:universal"
 
-    compile name: "buildcraft", version: "7.99.12"
-	
+    compile name: "buildcraft", version: "7.99.15"
+
 	runtime "net.industrial-craft:industrialcraft-2:${ic2_version}:universal"
 	runtime "mezz.jei:jei_1.12:${jei_version}"
 }
@@ -56,11 +56,11 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
